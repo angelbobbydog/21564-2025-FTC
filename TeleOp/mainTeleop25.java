@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 @TeleOp(name="2025 Main TeleOp", group="Linear OpMode")
 @Disabled
-public class mainTeleop extends LinearOpMode {
+public class mainTeleop25 extends LinearOpMode {
 
     // Declare OpMode members for each of the 4 motors.
     private ElapsedTime runtime = new ElapsedTime();
