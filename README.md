@@ -1,5 +1,3 @@
 # 21564-2025-FTC
 
-code for FTC team 21564 for the 2025-26 FTC game
-
-java
+21564's (Tech Titans Burgundy) code for 2025-26 FTC game, decode.
