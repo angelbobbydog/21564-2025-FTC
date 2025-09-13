@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.robotcontroller.external.samples;
+package org.firstinspires.ftc.teamcode;
 
 //imports
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
@@ -33,7 +33,7 @@ public class mainTeleop25 extends LinearOpMode {
       
        /*
        motor directions
-       NOTE - PLEASE TEST MOTOR/SERVO DIRECTIONS ON ROBOT
+       NOTE - PLEASE TEST MOTOR DIRECTIONS ON ROBOT
        */
       
       //drive motors
@@ -43,7 +43,9 @@ public class mainTeleop25 extends LinearOpMode {
         rightBackDrive.setDirection(DcMotor.Direction.FORWARD);
       // other motors
 
-      
+
+
+        
 
         // Wait for the game to start (driver presses PLAY)
         telemetry.addData("Status", "Initialized");
@@ -56,7 +58,8 @@ public class mainTeleop25 extends LinearOpMode {
         while (opModeIsActive()) {
             double max;
 
-            // POV Mode uses left joystick to go forward & strafe, and right joystick to rotate.
+
+            //joystick drive
             double axial   = -gamepad1.left_stick_y;  // Note: pushing stick forward gives negative value
             double lateral =  gamepad1.left_stick_x;
             double yaw     =  gamepad1.right_stick_x;
@@ -81,28 +84,15 @@ public class mainTeleop25 extends LinearOpMode {
                 rightBackPower  /= max;
             }
 
-            // This is test code:
-            //
-            // Uncomment the following code to test your motor directions.
-            // Each button should make the corresponding motor run FORWARD.
-            //   1) First get all the motors to take to correct positions on the robot
-            //      by adjusting your Robot Configuration if necessary.
-            //   2) Then make sure they run in the correct direction by modifying the
-            //      the setDirection() calls above.
-            // Once the correct motors move in the correct direction re-comment this code.
-
-            /*
-            leftFrontPower  = gamepad1.x ? 1.0 : 0.0;  // X gamepad
-            leftBackPower   = gamepad1.a ? 1.0 : 0.0;  // A gamepad
-            rightFrontPower = gamepad1.y ? 1.0 : 0.0;  // Y gamepad
-            rightBackPower  = gamepad1.b ? 1.0 : 0.0;  // B gamepad
-            */
-
-            // Send calculated power to wheels
+            // Send calculated power to wheels - DRIVE MOTORS ONLY
             leftFrontDrive.setPower(leftFrontPower);
             rightFrontDrive.setPower(rightFrontPower);
             leftBackDrive.setPower(leftBackPower);
             rightBackDrive.setPower(rightBackPower);
+
+
+
+    
 
             // Show the elapsed game time and wheel power.
             telemetry.addData("Status", "Run Time: " + runtime.toString());
